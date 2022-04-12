@@ -9,7 +9,6 @@ export default function Home({ dogs }) {
   const [visableDogs, setvisableDogs] = useState(dogs);
   const [filters, setFilters] = useState({ rarity: "", trait: "" });
 
-  console.log(JSON.stringify(dogs))
 
   useEffect(() => {
     const filteredDogs = filter(dogs, filters);
@@ -172,16 +171,6 @@ export default function Home({ dogs }) {
                 />
                 <span className="radioButton"></span>
               </label>
-              {/* <label className="block relative pl-9 mb-3 cursor-pointer select-none">one
-              <input type="checkbox" className="opacity-0 cursor-pointer h-0 w-0 peer"/>
-              <span className="absolute top-0 left-0 h-6 w-6 bg-gray-400
-               after:peer-checked:block peer-checked:bg-blue-400
-              after:content-none after:absolute after:hidden
-              after:left-2 after:top-1 after:w-1 after:h-3 
-              after:border-white after:border-solid after:border-r-4 
-              after:border-b-4 after:border-t-0 after:border-l-0 
-              rotate-45"></span>
-            </label> */}
             </div>
           </div>
         </div>
