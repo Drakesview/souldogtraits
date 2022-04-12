@@ -964,7 +964,7 @@ const data = [
             "rarity": "1.93",
             "rarityClass": "Groovy",
             "category":"Eyes",
-            "img":"eye/Pilot-Goggles_Retriever188"
+            "img":"eye/Pilot-Goggles_Retriever188.png"
         },
         {
             "trait": "Pit Vipers",
@@ -982,7 +982,7 @@ const data = [
             "rarity": "0.78",
             "rarityClass": "Dynomite",
             "category":"Eyes",
-            "img":"SOL-Glasses_Retriever75.png"
+            "img":"eye/SOL-Glasses_Retriever75.png"
         },
         {
             "trait": "Stoned Blue Eyes",
@@ -1191,7 +1191,7 @@ const data = [
             "rarity": "0.46",
             "rarityClass": "Fly",
             "category":"Clothes",
-            "img":"cloth/TankWhiteAdidasVintage-Clothes3.pngg"
+            "img":"cloth/TankWhiteAdidasVintage-Clothes3.png"
         },
         {
             "trait": "Fresh Prince Jacket",
@@ -1986,7 +1986,7 @@ const data = [
             "rarity": "0.69",
             "rarityClass": "Fly",
             "category":"Mouth",
-            "img":"FrisbeeYellow-Mouth-Retriever3.png"
+            "img":"mouth/FrisbeeYellow-Mouth-Retriever3.png"
         }
 ]
 

@@ -10,10 +10,11 @@ export default function Home({ dogs }) {
   const [filters, setFilters] = useState({ rarity: "", trait: "" });
 
 
+
   useEffect(() => {
     const filteredDogs = filter(dogs, filters);
     setvisableDogs(filteredDogs);
-  }, [filters]);
+  }, [dogs, filters]);
 
   const onTraitChange = (e) => {
     setFilters({ ...filters, trait: e.target.value });
@@ -181,7 +182,7 @@ export default function Home({ dogs }) {
             {visableDogs?.map((dog) => (
               <MediumCard
                 key={dog.id}
-                img={"/images/"+ dog.img}
+                img={"/images/" + dog.img}
                 title={dog.trait}
                 rarity={dog.rarity}
                 category={dog.category}
@@ -195,14 +196,17 @@ export default function Home({ dogs }) {
 }
 
 export async function getStaticProps() {
+
+
   let id = 0;
   const preLoadDogs = await loadDogs();
-  const dogs = preLoadDogs.map((dog) => { 
-    return {...dog,rarity:parseFloat(dog.rarity), id: (id += 1)} });
+  const dogs = preLoadDogs.map((dog) => {
+    return { ...dog, rarity: parseFloat(dog.rarity), id: (id += 1) };
+  });
 
   return {
     props: {
-      dogs,
+      dogs
     },
   };
 }
