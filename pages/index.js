@@ -196,17 +196,24 @@ export default function Home({ dogs }) {
 }
 
 export async function getStaticProps() {
-
-
-  let id = 0;
-  const preLoadDogs = await loadDogs();
-  const dogs = preLoadDogs.map((dog) => {
-    return { ...dog, rarity: parseFloat(dog.rarity), id: (id += 1) };
+  let res = await fetch("https://vercel.com/drakesview/souldogtraits/api/dogs", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
+
+  let dogsData = await res.json();
+
+  // let id = 0;
+  // const preLoadDogs = await loadDogs();
+  // const dogs = preLoadDogs.map((dog) => {
+  //   return { ...dog, rarity: parseFloat(dog.rarity), id: (id += 1) };
+  // });
 
   return {
     props: {
-      dogs
+      dogs:dogsData.data
     },
   };
 }
