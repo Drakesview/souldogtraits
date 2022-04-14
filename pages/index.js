@@ -5,6 +5,7 @@ import MediumCard from "../components/MediumCard";
 import Image from "next/image";
 import filter from "../lib/filter";
 
+
 export default function Home({ dogs }) {
   const [visableDogs, setvisableDogs] = useState(dogs);
   const [filters, setFilters] = useState({ rarity: "", trait: "" });
@@ -196,24 +197,24 @@ export default function Home({ dogs }) {
 }
 
 export async function getStaticProps() {
-  let res = await fetch("https://vercel.com/drakesview/souldogtraits/api/dogs", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  let dogsData = await res.json();
-
-  // let id = 0;
-  // const preLoadDogs = await loadDogs();
-  // const dogs = preLoadDogs.map((dog) => {
-  //   return { ...dog, rarity: parseFloat(dog.rarity), id: (id += 1) };
+  // let res = await fetch("http://localhost:3000/api/dogs", {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
   // });
+
+  // let dogsData = await res.json();
+
+  let id = 0;
+  const preLoadDogs = await loadDogs();
+  const dogs = preLoadDogs.map((dog) => {
+    return { ...dog, rarity: parseFloat(dog.rarity), id: (id += 1) };
+  });
 
   return {
     props: {
-      dogs:dogsData.data
+      dogs
     },
   };
 }
