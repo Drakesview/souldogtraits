@@ -4,6 +4,7 @@ import { loadDogs, loadPosts } from "../lib/getName";
 import MediumCard from "../components/MediumCard";
 import Image from "next/image";
 import filter from "../lib/filter";
+import axios from "axios";
 
 
 export default function Home({ dogs }) {
@@ -11,6 +12,7 @@ export default function Home({ dogs }) {
   const [filters, setFilters] = useState({ rarity: "", trait: "" });
 
 
+ 
 
   useEffect(() => {
     const filteredDogs = filter(dogs, filters);
@@ -197,8 +199,6 @@ export default function Home({ dogs }) {
 }
 
 export async function getStaticProps() {
-
-
   let id = 0;
   const preLoadDogs = await loadDogs();
   const dogs = preLoadDogs.map((dog) => {
