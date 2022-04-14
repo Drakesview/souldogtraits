@@ -180,7 +180,7 @@ export default function Home({ dogs }) {
         </div>
 
         {/* trait display */}
-        <div className="w-screen h-full sm:w-3/4 sm:h-full m-5 sm:m-10">
+        <div className="h-full sm:w-3/4 sm:h-full m-5 sm:m-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {visableDogs?.map((dog) => (
               <MediumCard
