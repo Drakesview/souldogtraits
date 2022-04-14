@@ -197,14 +197,7 @@ export default function Home({ dogs }) {
 }
 
 export async function getStaticProps() {
-  // let res = await fetch("http://localhost:3000/api/dogs", {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
 
-  // let dogsData = await res.json();
 
   let id = 0;
   const preLoadDogs = await loadDogs();
