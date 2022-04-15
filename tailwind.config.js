@@ -10,7 +10,8 @@ module.exports = {
         souldogpink: "#EB8FB3",
         souldogprimary: '#6311FF',
         souldogprimaryhover: '#9761FF',
-        souldogtext: '#18A0FB'
+        souldogtext: '#18A0FB',
+        souldogbuttonhover: '#BD9AFF'
       },
       fontFamily: {
         luckiestGuy: ["LUCKIESTGUY", "cursive"]

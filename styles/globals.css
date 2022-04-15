@@ -10,6 +10,6 @@
 @layer {
   .radioButton {
     @apply after:top-2 after:left-2 after:w-2 after:rounded-full after:bg-white absolute top-0 left-0 h-6 w-6 bg-slate-400 rounded-full 
-    peer-checked:bg-souldogpink
+    peer-checked:bg-souldogprimary
   }
 }
