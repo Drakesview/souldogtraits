@@ -29,6 +29,7 @@ function Header() {
         <a
           href="http://www.souldogs.city"
           target="_blank"
+          rel="noopener noreferrer"
           className="lg:block text-white hover:scale-105 transform transition duration-300 ease-out  px-4 py-2 rounded-lg
           font-luckiestGuy sm:text-2xl"
         >
@@ -37,6 +38,7 @@ function Header() {
         <a
           href="http://shop.souldogs.city"
           target="_blank"
+          rel="noopener noreferrer"
           className="lg:block text-white hover:scale-105 transform transition duration-300 ease-out  px-4 py-2 rounded-lg
           font-luckiestGuy sm:text-2xl text-lg"
         >
@@ -47,6 +49,7 @@ function Header() {
           font-luckiestGuy sm:text-2xl text-lg"
           href="http://explore.souldogs.city"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Explore
         </a>
