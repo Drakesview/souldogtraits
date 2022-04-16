@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 
-function MediumCard({ img, title, rarity, category }) {
+function MediumCard({ img, title, rarity, category, occurrence }) {
   return (
     <div
       className="flex items-center m-2 mt-2 space-x-4 rounded-xl flex-col
@@ -12,7 +12,7 @@ function MediumCard({ img, title, rarity, category }) {
       </div>
       <div>
         <h2 className="font-luckiestGuy text-white text-xl text-center ">{title}</h2>
-        <h2 className="font-luckiestGuy text-center text-souldogpink" >Rarity: {rarity}%</h2>
+        <h2 className="font-luckiestGuy text-center text-souldogpink" >Rarity: {rarity}% ({occurrence})</h2>
         <h2 className="font-luckiestGuy text-center text-souldogpink" >Category: {category}</h2>
       </div>
     </div>

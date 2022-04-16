@@ -17,12 +17,12 @@ function Header() {
       </div>
       <div className="flex items-center justify-end space-x-4 sm:col-span-4">
         <Link href="https://twitter.com/SoulDogsNFT">
-          <a target="_blank">
+          <a target="_blank" className="none">
             <FaTwitter className="h-8 cursor-pointer w-8 fill-white hover:scale-105 transform transition duration-300 ease-out" />
           </a>
         </Link>
         <Link href={"http://Discord.gg/SoulDogs"}>
-          <a target="_blank">
+          <a target="_blank" className="none">
             <FaDiscord className="h-8 cursor-pointer w-8 fill-white hover:scale-105 transform transition duration-300 ease-out" />
           </a>
         </Link>

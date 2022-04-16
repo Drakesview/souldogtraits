@@ -6,13 +6,9 @@ import Image from "next/image";
 import filter from "../lib/filter";
 import Header from "../components/Header";
 
-
 export default function Home({ dogs }) {
   const [visableDogs, setvisableDogs] = useState(dogs);
-  const [filters, setFilters] = useState({ rarity: "", trait: "" });
-
-
- 
+  const [filters, setFilters] = useState({ rarity: "", trait: "", text: "" });
 
   useEffect(() => {
     const filteredDogs = filter(dogs, filters);
@@ -26,6 +22,10 @@ export default function Home({ dogs }) {
   const onRarityChange = (e) => {
     setFilters({ ...filters, rarity: e.target.value });
   };
+
+  const onSearchTextChange = (e) => {
+    setFilters({ ...filters, text: e.target.value });
+  };
   return (
     <div className="bg-gray-900">
       <Head>
@@ -33,11 +33,7 @@ export default function Home({ dogs }) {
         <meta name="description" content="Soul Dogs Traits and Rarity Tool" />
         <link rel="icon" href="/images/Logo.png" />
       </Head>
-      <Header/>
-
-
-
-
+      <Header />
 
       {/* Body container */}
       <div className="flex flex-col sm:flex-row min-h-screen ">
@@ -84,6 +80,17 @@ export default function Home({ dogs }) {
           <div className="hidden sm:flex flex-col sticky top-0 m-10">
             <div className="m-2 border-y-2 border-white">
               <h1 className="font-luckiestGuy text-white text-center text-2xl">
+                Search Trait
+              </h1>
+              <input
+                type={"text"}
+                onChange={onSearchTextChange}
+                placeholder="Enter Trait"
+                className="m-6 font-luckiestGuy text-white text-xl w-40 rounded-lg bg-souldogprimary border-2 p-1"
+              ></input>
+            </div>
+            <div className="m-2 border-b-2 border-white">
+              <h1 className="font-luckiestGuy text-white text-center text-2xl">
                 Select Trait
               </h1>
 
@@ -115,7 +122,7 @@ export default function Home({ dogs }) {
               <label className="block relative pl-9 cursor-pointer  select-none  m-6 font-luckiestGuy text-souldogwhite text-xl">
                 All
                 <input
-                defaultChecked
+                  defaultChecked
                   type="radio"
                   name="rarity"
                   value=""
@@ -193,6 +200,7 @@ export default function Home({ dogs }) {
                 title={dog.trait}
                 rarity={dog.rarity}
                 category={dog.category}
+                occurrence={dog.occurrence}
               ></MediumCard>
             ))}
           </div>
@@ -211,7 +219,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      dogs
+      dogs,
     },
   };
 }
