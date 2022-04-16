@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
 
+import { useEffect } from "react";
+
 function Header() {
+  useEffect(() => {
+    const windowRender = window;
+  }, []);
+
   return (
     <header className="top-0 z-50 p-5 grid sm:grid-cols-5 grid-cols-1 ">
       {/* left */}
@@ -10,14 +16,19 @@ function Header() {
         <Image src="/images/PAW-03.png" layout="fill" objectFit="contain" />
       </div>
       <div className="flex items-center justify-end space-x-4 sm:col-span-4">
-        <Link href={"https://twitter.com/SoulDogsNFT"}>
-          <FaTwitter className="h-10 cursor-pointer w-10 fill-blue-500 hover:scale-105 transform transition duration-300 ease-out" />
+        <Link href="https://twitter.com/SoulDogsNFT">
+          <a target="_blank">
+            <FaTwitter className="h-8 cursor-pointer w-8 fill-white hover:scale-105 transform transition duration-300 ease-out" />
+          </a>
         </Link>
         <Link href={"http://Discord.gg/SoulDogs"}>
-          <FaDiscord className="h-10 cursor-pointer w-10 fill-white hover:scale-105 transform transition duration-300 ease-out" />
+          <a target="_blank">
+            <FaDiscord className="h-8 cursor-pointer w-8 fill-white hover:scale-105 transform transition duration-300 ease-out" />
+          </a>
         </Link>
         <a
           href="http://www.souldogs.city"
+          target="_blank"
           className="lg:block text-white hover:scale-105 transform transition duration-300 ease-out  px-4 py-2 rounded-lg
           font-luckiestGuy sm:text-2xl"
         >
@@ -25,6 +36,7 @@ function Header() {
         </a>
         <a
           href="http://shop.souldogs.city"
+          target="_blank"
           className="lg:block text-white hover:scale-105 transform transition duration-300 ease-out  px-4 py-2 rounded-lg
           font-luckiestGuy sm:text-2xl text-lg"
         >
@@ -34,6 +46,7 @@ function Header() {
           className="lg:block text-white bg-souldogprimaryhover hover:bg-souldogbuttonhover hover:scale-105 transform transition duration-300 ease-out  px-4 py-2 rounded-lg
           font-luckiestGuy sm:text-2xl text-lg"
           href="http://explore.souldogs.city"
+          target="_blank"
         >
           Explore
         </a>
