@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Home({ dogs }) {
   const [visableDogs, setvisableDogs] = useState(dogs);
-  const [filters, setFilters] = useState({ rarity: "", trait: "", text: "" });
+  const [filters, setFilters] = useState({ rarity: "", trait: "", text: "", socialClub: [] });
   const [mobileMenuClicked, setMobileMenuClicked] = useState(false);
   const [menuDiv, setMenuDiv] = useState("");
 
@@ -38,6 +38,37 @@ export default function Home({ dogs }) {
     setFilters({ ...filters, text: e.target.value });
   };
 
+  const onClubChange = (e) => {
+    switch (e.target.value) {
+      case "Area51": 
+        setFilters({...filters, socialClub: ['Alien','Mutant']}) 
+        break;
+      case "MambaDAO":
+        setFilters({...filters, socialClub: ['Rebels Jersey']}) 
+        break;
+      case "Smokers Club":
+        setFilters({...filters, socialClub: ['Joint','Cigar','Smoking Jacket','Pipe']})
+        break;
+      case "DegenDogDAO":
+        setFilters({...filters, socialClub: ['Sol Glasses', 'BTC Glasses', 'ETH Glasses', 'Solana Necklace', 'BTC Necklace', 'ETH Necklace', 'DOGE Necklace', 'Black Solana Tee', 'ETH Tee', 'BTC Tee', 'Solana Special']}) 
+        break;
+      case "Bucket Club":
+        setFilters({...filters, socialClub: ['Red Bucket Hat','White Bucket Hat','Black Bucket Hat']})
+        break;
+      case "Hang10":
+        setFilters({...filters, socialClub: ['Red Hawaiian Shirt','Blue Hawaiian Shirt']})
+        break;
+        default: setFilters({...filters, socialClub:[]})
+    }
+ 
+  }
+
+// //"MambaDAO">MambaDAO </option>
+// <option value="Smokers Club">Smokers Club</option>
+// <option value="DegenDogDAO">DegenDogDAO </option>
+// <option value="Bucket Club">Bucket Club</option>
+// <option value="Hang10">Hang10</option>
+
   const onMobileMenuClick = () => {
     menuDiv.style.width = "100%";
     setMobileMenuClicked(true);
@@ -47,7 +78,6 @@ export default function Home({ dogs }) {
     menuDiv.style.width = "0%";
     setMobileMenuClicked(false);
   };
-  console.log(menuDiv);
   return (
     <div className="bg-gray-900">
       <Head>
@@ -129,6 +159,31 @@ export default function Home({ dogs }) {
               <option value="Dynomite">Dynomite</option>
             </select>
           </div>
+          <div className="m-2">
+            <h1 className="font-luckiestGuy text-white text-center text-lg">
+              Select Club
+            </h1>
+
+            <select
+              name="club"
+              id="club"
+              onChange={onClubChange}
+              className="border-2 rounded-lg bg-souldogprimary m-4 font-luckiestGuy text-white text-lg"
+            >
+              <option value="" defaultValue="" disabled hidden>
+                Choose club
+              </option>
+              <option value={""} className="rounded-lg p-2">
+                Any Club
+              </option>
+              <option value="Area51">Area51 </option>
+              <option value="MambaDAO">MambaDAO </option>
+              <option value="Smokers Club">Smokers Club</option>
+              <option value="DegenDogDAO">DegenDogDAO </option>
+              <option value="Bucket Club">Bucket Club</option>
+              <option value="Hang10">Hang10</option>
+            </select>
+          </div>
           <div className="flex items-center justify-evenly p-5">
             <Link href="https://twitter.com/SoulDogsNFT">
               <a target="_blank" className="none">
@@ -177,7 +232,7 @@ export default function Home({ dogs }) {
         />
       )}
       {/* Body container */}
-      <div className="grid lg:grid-cols-5 grid-cols-1 min-h-screen ">
+      <div className="grid lg:grid-cols-5 grid-cols-1 min-h-screen p-5">
         {/* desktop view */}
         <div className="hidden lg:flex flex-col sticky top-0 m-10 max-h-screen items-center">
           <div className="m-2 border-t-2 border-white">
@@ -217,7 +272,7 @@ export default function Home({ dogs }) {
               <option value="Neck">Neck</option>
             </select>
           </div>
-          <div className="m-2 border-y-2 border-white">
+          <div className="m-2 border-t-2 border-white">
             <h1 className="font-luckiestGuy text-center text-white text-2xl">
               Select Rarity
             </h1>
@@ -288,6 +343,31 @@ export default function Home({ dogs }) {
               />
               <span className="radioButton"></span>
             </label>
+          </div>
+          <div className="m-2 border-t-2 border-b-2 border-white">
+            <h1 className="font-luckiestGuy text-white text-center text-2xl">
+              Select Club
+            </h1>
+
+            <select
+              name="club"
+              id="club"
+              onChange={onClubChange}
+              className="border-2 rounded-lg bg-souldogprimary m-6 font-luckiestGuy text-white text-xl"
+            >
+              <option value="" defaultValue="" disabled hidden>
+                Choose club
+              </option>
+              <option value={""} className="rounded-lg p-2">
+                Any club
+              </option>
+              <option value="Area51">Area51 </option>
+              <option value="MambaDAO">MambaDAO </option>
+              <option value="Smokers Club">Smokers Club</option>
+              <option value="DegenDogDAO">DegenDogDAO </option>
+              <option value="Bucket Club">Bucket Club</option>
+              <option value="Hang10">Hang10</option>
+            </select>
           </div>
         </div>
 
