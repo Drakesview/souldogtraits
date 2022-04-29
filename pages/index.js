@@ -232,9 +232,9 @@ export default function Home({ dogs }) {
         />
       )}
       {/* Body container */}
-      <div className="grid lg:grid-cols-5 grid-cols-1 min-h-screen p-5">
+      <div className="grid lg:grid-cols-5 grid-cols-1 min-h-screen p-5 pt-0">
         {/* desktop view */}
-        <div className="hidden lg:flex flex-col sticky top-0 m-10 max-h-screen items-center">
+        <div className="hidden lg:flex flex-col sticky top-0 m-6 max-h-screen items-center">
           <div className="m-2 border-t-2 border-white">
             <h1 className="font-luckiestGuy text-white text-center text-2xl">
               Search Trait
@@ -273,78 +273,30 @@ export default function Home({ dogs }) {
             </select>
           </div>
           <div className="m-2 border-t-2 border-white">
-            <h1 className="font-luckiestGuy text-center text-white text-2xl">
+            <h1 className="font-luckiestGuy text-white text-center text-2xl">
               Select Rarity
             </h1>
-            <label className="block relative pl-9 cursor-pointer  select-none  m-6 font-luckiestGuy text-souldogwhite text-xl">
-              All
-              <input
-                defaultChecked
-                type="radio"
-                name="rarity"
-                value=""
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
-            <label className="block relative pl-9 cursor-pointer select-none m-6 font-luckiestGuy text-souldogwhite text-xl">
-              Common
-              <input
-                type="radio"
-                name="rarity"
-                value="common"
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
-            <label className="block relative pl-9 cursor-pointer select-none m-6 font-luckiestGuy text-souldogwhite text-xl">
-              Cool
-              <input
-                type="radio"
-                value="Cool"
-                name="rarity"
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
-            <label className="block relative pl-9 cursor-pointer select-none m-6 font-luckiestGuy text-souldogwhite text-xl">
-              Groovy
-              <input
-                type="radio"
-                value="Groovy"
-                name="rarity"
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
-            <label className="block relative pl-9 cursor-pointer select-none m-6 font-luckiestGuy text-souldogwhite text-xl">
-              Fly
-              <input
-                type="radio"
-                value="Fly"
-                name="rarity"
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
-            <label className="block relative pl-9 cursor-pointer select-none m-6 font-luckiestGuy text-souldogwhite text-xl">
-              Dynomite
-              <input
-                type="radio"
-                value="Dynomite"
-                name="rarity"
-                className="absolute opacity-0 cursor-pointer peer"
-                onChange={onRarityChange}
-              />
-              <span className="radioButton"></span>
-            </label>
+
+            <select
+              name="rarity"
+              id="rarity"
+              onChange={onRarityChange}
+              className="border-2 rounded-lg bg-souldogprimary m-6 font-luckiestGuy text-white text-xl"
+            >
+              <option value="" defaultValue="" disabled hidden>
+                Choose Rarity
+              </option>
+              <option value={""} className="rounded-lg p-2">
+                Any Rarity
+              </option>
+              <option value="Common">Common</option>
+              <option value="Cool">Cool</option>
+              <option value="Groovy">Groovy</option>
+              <option value="Fly">Fly</option>
+              <option value="Dynomite">Dynomite</option>
+            </select>
           </div>
-          <div className="m-2 border-t-2 border-b-2 border-white">
+          <div className="m-2 border-t-2 border-white">
             <h1 className="font-luckiestGuy text-white text-center text-2xl">
               Select Club
             </h1>
