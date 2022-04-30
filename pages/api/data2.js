@@ -548,7 +548,7 @@ const data = [
             "rarity": "5.65",
             "rarityClass": "Common",
             "category":"Head",
-            "img":"head/HeadscarfUSA-NoEars-Head3.png",
+            "img":"cloth/None-Retriever.png",
         },
         {
             "trait": "Party hat",
@@ -946,7 +946,7 @@ const data = [
             "rarity": "1.74",
             "rarityClass": "Fly",
             "category":"Eyes",
-            "img":"eye/3D-Glasses_Retriever75.png"
+            "img":"eye/Laser-Eyes_Retriever175.png"
         },
         {
             "trait": "Monocle",
@@ -955,7 +955,7 @@ const data = [
             "rarity": "5.01",
             "rarityClass": "Cool",
             "category":"Eyes",
-            "img":"eye/Laser-Eyes_Retriever175.png"
+            "img":"eye/Monocle_Retriever500.png"
         },
         {
             "trait": "Pilot Goggles",
@@ -1236,7 +1236,7 @@ const data = [
             "rarity": "4.79",
             "rarityClass": "common",
             "category":"Clothes",
-            "img":"cloth/70sVestWithCollaredShirtUnder-Clothes.png"
+            "img":"cloth/None-Retriever.png"
         },
         {
             "trait": "Plain White Tee",
@@ -1588,7 +1588,7 @@ const data = [
             "rarity": "45.70",
             "rarityClass": "Common",
             "category":"Neck",
-            "img":"necklace/BTC-Necklace38.png"
+            "img":"cloth/None-Retriever.png"
         },
         {
             "trait": "Peace Sign Necklace",
@@ -1833,7 +1833,7 @@ const data = [
             "rarity": "0.55",
             "rarityClass": "Fly",
             "category":"Mouth",
-            "img":"mouth/BeerCan-Mouth-Retriever1.png"
+            "img":"mouth/Joint_Retriever70.png"
         },
         {
             "trait": "Kiss",
